@@ -11,8 +11,10 @@ function search() {
     // Search
     var input = $('#srch-term').val();
 
-    $.ajax({
-        url: "home/search", success: function (result) {
+    $.post({
+        url: "home/search/",
+        data: {"nameFragment": input},
+        success: function (result) {
             $('#content').html(result);
         }
     });

@@ -22,14 +22,26 @@ namespace PeopleSearch.Controllers
         {
             return View();
         }
-
+        
+        [HttpGet]
         public IActionResult Search()
         {
             var model = new SearchViewModel();
-            model.People = _peopleData.GetAll();            
+            model.People = _peopleData.GetAll();
 
             return View(model);
         }
+
+        
+        [HttpPost]
+        public IActionResult Search(string nameFragment)
+        {
+            var model = new SearchViewModel();
+            model.People = _peopleData.Get(nameFragment);
+
+            return PartialView(model);
+        }
+        
 
         public IActionResult Error()
         {

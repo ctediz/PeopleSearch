@@ -10,6 +10,7 @@ namespace PeopleSearch.Services
     {
         IEnumerable<Person> GetAll();
         Person Get(int id);
+        IEnumerable<Person> Get(string nameFragment);
         Person Add(Person newPerson);
         void Commit();
     }
@@ -38,6 +39,12 @@ namespace PeopleSearch.Services
         public Person Get(int id)
         {
             return _context.People.FirstOrDefault(r => r.Id == id);
+        }
+
+        public IEnumerable<Person> Get(string nameFragment)
+        {
+            return _context.People.Where(r => 
+                (r.FirstName + r.LastName).Contains(nameFragment));
         }
 
         public IEnumerable<Person> GetAll()
