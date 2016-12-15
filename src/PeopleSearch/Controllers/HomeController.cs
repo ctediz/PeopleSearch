@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using PeopleSearch.Services;
+using PeopleSearch.Entities;
+using PeopleSearch.ViewModels;
 
 namespace PeopleSearch.Controllers
 {
@@ -23,7 +25,10 @@ namespace PeopleSearch.Controllers
 
         public IActionResult Search()
         {
-            return View();
+            var model = new SearchViewModel();
+            model.People = _peopleData.GetAll();            
+
+            return View(model);
         }
 
         public IActionResult Error()

@@ -1,0 +1,14 @@
+﻿@model PeopleSearch.Entities.Person
+
+
+<section class="panel panel-default">
+    <h2 class="panel-heading">@Model.FirstName @Model.LastName</h2>
+    <div class="panel-body">
+        <div>Interests: @Model.Interests</div>
+        <div>Birthday: @Model.Birth.Year</div>
+    </div>
+    <div class="panel-footer">
+        <a class="btn btn-primary">Edit</a>
+        <a class="btn btn-primary">Delete</a>
+    </div>
+</section>

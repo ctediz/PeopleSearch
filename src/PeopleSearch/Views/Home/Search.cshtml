@@ -1,1 +1,9 @@
-﻿
+﻿@model PeopleSearch.ViewModels.SearchViewModel
+
+@{ 
+    ViewBag.Title = "Search";
+}
+@foreach (var person in Model.People)
+{
+    @Html.Partial("_PeopleSummary", person)
+}
