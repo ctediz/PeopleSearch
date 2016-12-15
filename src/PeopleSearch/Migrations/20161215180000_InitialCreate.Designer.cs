@@ -8,7 +8,7 @@ using PeopleSearch.Entities;
 namespace PeopleSearch.Migrations
 {
     [DbContext(typeof(PeopleSearchDbContext))]
-    [Migration("20161215165605_InitialCreate")]
+    [Migration("20161215180000_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
