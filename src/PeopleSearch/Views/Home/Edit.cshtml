@@ -1,0 +1,32 @@
+﻿@model PeopleSearch.Entities.Person
+
+@{
+    ViewBag.Title = "Editing: " + @Model.FirstName + " " + @Model.LastName;
+}
+
+<div>
+    <form method="post" asp-antiforgery="true">
+        <div>
+            <label asp-for="FirstName">First Name</label>
+            <input asp-for="FirstName" />
+            <span asp-validation-for="FirstName"></span>
+        </div>
+        <div>
+        <label asp-for="LastName">Last Name</label>
+        <input asp-for="LastName" />
+        <span asp-validation-for="LastName"></span>
+        </div>
+        <div>
+            <label asp-for="Interests"></label>
+            <input asp-for="Interests" />
+        </div>
+        <div>
+            <label asp-for="Birth"></label>
+            <input asp-for="Birth" />
+            <span asp-validation-for="Birth"></span>
+        </div>
+        <div>
+            <input type="submit" value="Save" />
+        </div>
+    </form>
+</div>
